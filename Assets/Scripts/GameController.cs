@@ -8,7 +8,10 @@ public class GameController : MonoBehaviour
     public TMP_Text LeftPlayerName;
     public TMP_Text RightPlayerName;
     public GameObject WinnerText;
-    private bool hasSomeoneWon=false;
+    private bool hasSomeoneWon = false;
+
+    public FigaController LeftPlayer;
+    public FigaController RightPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -51,5 +54,7 @@ public class GameController : MonoBehaviour
         WinnerText.GetComponent<TMP_Text>().text = WinnerName+" has won!";
         WinnerText.GetComponent<Animator>().SetBool("HasSomeoneWon", true);
         hasSomeoneWon = true;
+        LeftPlayer.GameEnded = true;
+        RightPlayer.GameEnded = true;
     }
 }
