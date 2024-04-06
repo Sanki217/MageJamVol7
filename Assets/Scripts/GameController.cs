@@ -9,10 +9,10 @@ public class GameController : MonoBehaviour
     public TMP_Text RightPlayerName;
     public GameObject WinnerText;
     private bool hasSomeoneWon = false;
-
     public FigaController LeftPlayer;
     public FigaController RightPlayer;
-
+    public TMP_Text TimeText;
+    public float time=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +47,9 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+
+        time = time+Time.deltaTime;
+        TimeText.text = (Mathf.Round(time * 100f) / 100f).ToString();
     }
 
     public void Win(string WinnerName)
