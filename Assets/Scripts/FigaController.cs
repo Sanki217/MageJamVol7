@@ -71,6 +71,8 @@ public class FigaController : MonoBehaviour
     IEnumerator ReturnCoroutine()
     {
         yield return new WaitForSeconds(1f);
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
         GetComponent<SphereCollider>().enabled = true;
         CanMove = true;
     }
