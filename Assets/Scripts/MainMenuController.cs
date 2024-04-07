@@ -66,4 +66,12 @@ public class MainMenuController : MonoBehaviour
         PlayerPrefs.SetString("RightPlayerName", RightPlayerName.text);
         Application.Quit();
     }
+
+    public void ClearRecord()
+    {
+        PlayerPrefs.DeleteKey("Record");
+        PlayerPrefs.DeleteKey("RecordHolder");
+        Record.text = "";
+        RecordHolder.text = "";
+    }
 }
