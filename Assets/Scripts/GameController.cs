@@ -68,14 +68,16 @@ public class GameController : MonoBehaviour
 
         if (PlayerPrefs.HasKey("Record"))
         {
-            if (PlayerPrefs.GetFloat("Record") < (Mathf.Round(time * 100f) / 100f))
+            if (PlayerPrefs.GetFloat("Record") > (Mathf.Round(time * 100f) / 100f))
             {
                 PlayerPrefs.SetFloat("Record", (Mathf.Round(time * 100f) / 100f));
+                PlayerPrefs.SetString("RecordHolder", WinnerName);
             }
         }
         else
         {
-            PlayerPrefs.SetString("Record", (Mathf.Round(time * 100f) / 100f).ToString());
+            PlayerPrefs.SetFloat("Record", (Mathf.Round(time * 100f) / 100f));
+            PlayerPrefs.SetString("RecordHolder", WinnerName);
         }
 
         

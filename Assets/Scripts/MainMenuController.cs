@@ -8,6 +8,7 @@ public class MainMenuController : MonoBehaviour
     public TMP_InputField LeftPlayerName;
     public TMP_InputField RightPlayerName;
     public TMP_Text Record;
+    public TMP_Text RecordHolder;
 
     private void Start()
     {
@@ -16,6 +17,12 @@ public class MainMenuController : MonoBehaviour
         if (PlayerPrefs.HasKey("Record"))
         {
             Record.text = PlayerPrefs.GetFloat("Record").ToString();
+            Debug.Log("record:" + PlayerPrefs.GetFloat("Record").ToString());
+        }
+        if (PlayerPrefs.HasKey("RecordHolder"))
+        {
+            RecordHolder.text = PlayerPrefs.GetString("RecordHolder");
+            Debug.Log("record holder:" + PlayerPrefs.GetString("RecordHolder"));
         }
 
         if (PlayerPrefs.HasKey("LeftPlayerName"))
