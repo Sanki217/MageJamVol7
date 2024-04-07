@@ -3,16 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
+
 public class MainMenuController : MonoBehaviour
 {
     public TMP_InputField LeftPlayerName;
     public TMP_InputField RightPlayerName;
     public TMP_Text Record;
     public TMP_Text RecordHolder;
+    public Toggle singleplayerrToggle;
 
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
+
+        if (PlayerPrefs.HasKey("PlayerNumber"))
+        {
+            if (PlayerPrefs.GetInt("PlayerNumber") == 1)
+            {
+                singleplayerrToggle.isOn = true;
+            }
+            else
+            {
+                singleplayerrToggle.isOn = false;
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("PlayerNumber", 2);
+            singleplayerrToggle.isOn = false;
+        }
 
         if (PlayerPrefs.HasKey("Record"))
         {
@@ -57,7 +77,14 @@ public class MainMenuController : MonoBehaviour
         {
             PlayerPrefs.SetString("RightPlayerName", RightPlayerName.text);
         }
-        
+        if (singleplayerrToggle == true)
+        {
+            PlayerPrefs.SetInt("PlayerNumber", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("PlayerNumber", 2);
+        }
         SceneManager.LoadScene(1);
     }
     public void ExitGame()
