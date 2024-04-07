@@ -17,6 +17,7 @@ public class FigaController : MonoBehaviour
     private float forwardSpeed;
     public bool CanMove = true;
     public bool GameEnded = false;
+    [SerializeField] private float topSpeed;
 
 
     // Start is called before the first frame update
@@ -48,8 +49,13 @@ public class FigaController : MonoBehaviour
         {
             rb.AddForce(Vector3.right * -speed * rightSpeed);
             rb.AddForce(Vector3.forward * -speed * forwardSpeed);
-        }
 
+
+        }
+        if(rb.velocity.magnitude > topSpeed)
+        {
+            rb.velocity=Vector3.ClampMagnitude(rb.velocity, topSpeed);
+        }
         
     }
 

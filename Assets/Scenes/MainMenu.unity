@@ -591,6 +591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftPlayerName: {fileID: 501792838}
   RightPlayerName: {fileID: 1443500151}
+  Record: {fileID: 0}
 --- !u!4 &414866743
 Transform:
   m_ObjectHideFlags: 0

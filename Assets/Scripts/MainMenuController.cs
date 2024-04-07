@@ -7,12 +7,16 @@ public class MainMenuController : MonoBehaviour
 {
     public TMP_InputField LeftPlayerName;
     public TMP_InputField RightPlayerName;
+    public TMP_Text Record;
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
-        
-        
+        //PlayerPrefs.DeleteAll();
+
+        if (PlayerPrefs.HasKey("Record"))
+        {
+            Record.text = PlayerPrefs.GetFloat("Record").ToString();
+        }
 
         if (PlayerPrefs.HasKey("LeftPlayerName"))
         {
@@ -30,10 +34,10 @@ public class MainMenuController : MonoBehaviour
         {
             ExitGame();
         }
-        if (Input.GetKey(KeyCode.Space))
+        /*if (Input.GetKey(KeyCode.Enter))
         {
             StartGame();
-        }
+        }*/
     }
     public void StartGame()
     {
