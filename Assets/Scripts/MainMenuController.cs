@@ -11,7 +11,7 @@ public class MainMenuController : MonoBehaviour
     public TMP_InputField RightPlayerName;
     public TMP_Text Record;
     public TMP_Text RecordHolder;
-    public Toggle singleplayerrToggle;
+    public Toggle multiplayerToggle;
 
     private void Start()
     {
@@ -19,19 +19,19 @@ public class MainMenuController : MonoBehaviour
 
         if (PlayerPrefs.HasKey("PlayerNumber"))
         {
-            if (PlayerPrefs.GetInt("PlayerNumber") == 1)
+            if (PlayerPrefs.GetInt("PlayerNumber") == 2)
             {
-                singleplayerrToggle.isOn = true;
+                multiplayerToggle.isOn = true;
             }
             else
             {
-                singleplayerrToggle.isOn = false;
+                multiplayerToggle.isOn = false;
             }
         }
         else
         {
             PlayerPrefs.SetInt("PlayerNumber", 2);
-            singleplayerrToggle.isOn = false;
+            multiplayerToggle.isOn = false;
         }
 
         if (PlayerPrefs.HasKey("Record"))
@@ -77,13 +77,13 @@ public class MainMenuController : MonoBehaviour
         {
             PlayerPrefs.SetString("RightPlayerName", RightPlayerName.text);
         }
-        if (singleplayerrToggle == true)
+        if (multiplayerToggle.isOn == true)
         {
-            PlayerPrefs.SetInt("PlayerNumber", 1);
+            PlayerPrefs.SetInt("PlayerNumber", 2);
         }
         else
         {
-            PlayerPrefs.SetInt("PlayerNumber", 2);
+            PlayerPrefs.SetInt("PlayerNumber", 1);
         }
         SceneManager.LoadScene(1);
     }

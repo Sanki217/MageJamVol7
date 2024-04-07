@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Meta : MonoBehaviour
@@ -7,7 +8,7 @@ public class Meta : MonoBehaviour
 
     private bool HasSomeoneWon=false;
     public GameController Controller;
-
+    public List<ParticleSystem> ParticleSystems;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,10 +22,12 @@ public class Meta : MonoBehaviour
                     if (PlayerPrefs.HasKey("LeftPlayerName"))
                     {
                         Controller.Win(PlayerPrefs.GetString("LeftPlayerName"));
+                        SetParticles();
                         Debug.Log("someone whould win");
                     }
                     else
                     {
+                        SetParticles();
                         Controller.Win("gracz lewy");
                     }
                 }
@@ -33,10 +36,12 @@ public class Meta : MonoBehaviour
                 {
                     if (PlayerPrefs.HasKey("RightPlayerName"))
                     {
+                        SetParticles();
                         Controller.Win(PlayerPrefs.GetString("RightPlayerName"));
                     }
                     else
                     {
+                        SetParticles();
                         Controller.Win("gracz prawy");
                     }
                 }
@@ -46,4 +51,14 @@ public class Meta : MonoBehaviour
             
         }
     }
+    private void SetParticles()
+    {
+        foreach(var particle in ParticleSystems)
+        {
+            particle.Play();
+        }
+    }
+
 }
+
+

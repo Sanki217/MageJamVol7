@@ -668,7 +668,7 @@ MonoBehaviour:
   RightPlayerName: {fileID: 1443500151}
   Record: {fileID: 1682322915}
   RecordHolder: {fileID: 2064161760}
-  singleplayerrToggle: {fileID: 523566607}
+  multiplayerToggle: {fileID: 523566607}
 --- !u!4 &414866743
 Transform:
   m_ObjectHideFlags: 0

@@ -11,8 +11,8 @@ public class MultiplayerController : MonoBehaviour
     public List<GameObject> TurnOffAtMultiplayer;
     void Start()
     {
-        //PlayerPrefs.SetInt("PlayerNumber", 1);//wy³¹czyæ
-
+        //PlayerPrefs.SetInt("PlayerNumber", 2);//wy³¹czyæ
+        Debug.Log("player number:" + PlayerPrefs.GetInt("PlayerNumber"));
         if (PlayerPrefs.GetInt("PlayerNumber") == 1)
         {
             foreach(GameObject t in TurnOnAtSingleplayer)
