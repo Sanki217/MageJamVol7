@@ -38,6 +38,13 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!hasSomeoneWon)
+        {
+            time = time + Time.deltaTime;
+            TimeText.text = (Mathf.Round(time * 100f) / 100f).ToString();
+
+        }
+
         if(Input.GetKey(KeyCode.Escape))
         {
             SceneManager.LoadScene(0);
@@ -48,13 +55,12 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
-        time = time+Time.deltaTime;
-        TimeText.text = (Mathf.Round(time * 100f) / 100f).ToString();
+        
     }
 
     public void Win(string WinnerName)
     {
-        WinnerText.GetComponent<TMP_Text>().text = WinnerName+" has won!";
+        WinnerText.GetComponent<TMP_Text>().text = WinnerName+" has won!\nenter to restart\nescape to menu";
         WinnerText.GetComponent<Animator>().SetBool("HasSomeoneWon", true);
         hasSomeoneWon = true;
         LeftPlayer.GameEnded = true;

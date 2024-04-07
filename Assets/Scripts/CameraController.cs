@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(target);
+        //transform.LookAt(target);
+        transform.DOLookAt(target.position, time);
     }
 }

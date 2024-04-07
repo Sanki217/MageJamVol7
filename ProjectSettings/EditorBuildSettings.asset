@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: a7a3d647b57e51a439398e62074611e7
   - enabled: 1
-    path: Assets/Scenes/MiszaScene.unity
-    guid: c6343bb366d67834e87ed0b51eb0fd75
+    path: Assets/Scenes/SankiScene.unity
+    guid: 09c029ad3ff082c45980bf03b34af8b6
   m_configObjects: {}
