@@ -151,7 +151,11 @@ MonoBehaviour:
   horizontalMovement: Horizontal2
   verticalMovement: Vertical2
   speed: 15
+  RetryPoint: {fileID: 0}
   CanMove: 1
+  GameEnded: 0
+  topSpeed: 1.35
+  gameController: {fileID: 0}
 --- !u!1001 &3046090863797089179
 PrefabInstance:
   m_ObjectHideFlags: 0
