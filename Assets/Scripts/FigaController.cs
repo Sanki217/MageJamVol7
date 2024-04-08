@@ -18,7 +18,7 @@ public class FigaController : MonoBehaviour
     public bool CanMove = true;
     public bool GameEnded = false;
     [SerializeField] private float topSpeed;
-
+    public GameController gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -75,5 +75,9 @@ public class FigaController : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
         GetComponent<SphereCollider>().enabled = true;
         CanMove = true;
+        if (PlayerPrefs.GetInt("PlayerNumber") == 1)
+        {
+            gameController.time = 0f;
+        }
     }
 }

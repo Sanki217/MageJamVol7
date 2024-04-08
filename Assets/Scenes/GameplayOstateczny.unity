@@ -15096,6 +15096,10 @@ PrefabInstance:
       propertyPath: RetryPoint
       value: 
       objectReference: {fileID: 1840106101}
+    - target: {fileID: 2760076042357989033, guid: b59d7abad1d01dc44ba3df7af622c6d0, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 865981936}
     - target: {fileID: 4594666318268191267, guid: b59d7abad1d01dc44ba3df7af622c6d0, type: 3}
       propertyPath: m_Material
       value: 
@@ -22320,6 +22324,10 @@ PrefabInstance:
       propertyPath: RetryPoint
       value: 
       objectReference: {fileID: 1571070165}
+    - target: {fileID: 7276230349481221132, guid: 64d8f5aa27dbfdc418bd8f4d781da281, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 865981936}
     - target: {fileID: 8183798284674503706, guid: 64d8f5aa27dbfdc418bd8f4d781da281, type: 3}
       propertyPath: m_Name
       value: Figa player 1
@@ -23445,6 +23453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 865981936}
+  ParticleSystems: []
 --- !u!65 &1197946992
 BoxCollider:
   m_ObjectHideFlags: 0
